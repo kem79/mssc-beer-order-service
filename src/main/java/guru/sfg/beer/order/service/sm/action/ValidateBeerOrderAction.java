@@ -1,4 +1,4 @@
-package guru.sfg.beer.order.service.config.action;
+package guru.sfg.beer.order.service.sm.action;
 
 import guru.sfg.beer.order.service.config.JmsConfig;
 import guru.sfg.beer.order.service.domain.BeerOrder;

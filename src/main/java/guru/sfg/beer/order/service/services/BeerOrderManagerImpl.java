@@ -45,6 +45,10 @@ public class BeerOrderManagerImpl implements BeerOrderManager {
 
         if (isValid == Boolean.TRUE) {
             sendBeerOrderEvent(beerOrder, BeerOrderEventEnum.VALIDATION_PASSED);
+
+            BeerOrder savedBeerOrder = beerOrderRepository.findOneById(beerOrder.getId());
+
+            sendBeerOrderEvent(savedBeerOrder, BeerOrderEventEnum.ALLOCATE_ORDER);
         } else {
             sendBeerOrderEvent(beerOrder, BeerOrderEventEnum.VALIDATION_FAILED);
         }
